@@ -22,4 +22,8 @@ const port = process.env.PORT || 5000;
  }
 
 
-app.listen(port, () => console.log('Node JS Server Started'));
+app.listen(port, err => {
+    if(err) throw err;
+    console.log("%c Server running", "color: green");
+    console.log(`Node JS Server Started on port ${port}`);
+});
